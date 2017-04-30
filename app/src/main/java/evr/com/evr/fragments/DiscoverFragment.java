@@ -1,5 +1,6 @@
 package evr.com.evr.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,9 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 
 import evr.com.evr.R;
+import evr.com.evr.activities.VrModeActivity;
 import evr.com.evr.adapters.DiscoverGridViewAdapter;
 import evr.com.evr.utils.Stubs;
 
@@ -42,6 +45,7 @@ public class DiscoverFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         GridView gridview = (GridView) getView().findViewById(R.id.gridview);
+        Button vrButton = (Button) getView().findViewById(R.id.vrButton);
         gridview.setAdapter(new DiscoverGridViewAdapter(getActivity(), Stubs.getDiscoverSections()));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -50,6 +54,16 @@ public class DiscoverFragment extends Fragment {
                 //TODO Open new screen of discover section
             }
         });
+
+
+        vrButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent vrModeIntent = new Intent(getActivity(), VrModeActivity.class);
+                startActivity(vrModeIntent);
+            }
+        });
+
 
 
     }
