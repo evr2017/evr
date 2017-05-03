@@ -3,4 +3,10 @@
 
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title">Title</string>
+    <string name="subtitle">SubTitle</string>
+    <string name="paragraph1">A quick brown fox jumps over a lazy dog</string>
+    <string name="paragraph2">Lorem ipsum dolor sit amet, qui ne iisque intellegam dissentiunt. Sumo nobis facilisi ut cum, quo nonumy verear ceteros at. Voluptua definitiones ex cum, no sit modo falli discere, vim minimum lucilius instructior no. Id mei paulo audiam dolores, postea utroque molestiae at mea, est abhorreant consectetuer an. Id elit labore mea, pro ne ignota volutpat. Magna melius blandit qui no. Dicta philosophia mel ex, at dolorem vituperatoribus his.</string>
+
 </resources>

@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.GridView;
 
 import evr.com.evr.R;
+import evr.com.evr.activities.DiscoverSectionActivity;
 import evr.com.evr.activities.VrModeActivity;
 import evr.com.evr.adapters.DiscoverGridViewAdapter;
 import evr.com.evr.utils.Stubs;
@@ -51,7 +52,8 @@ public class DiscoverFragment extends Fragment {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                //TODO Open new screen of discover section
+                Intent discoverSectionIntent = new Intent(getActivity(), DiscoverSectionActivity.class);
+                startActivity(discoverSectionIntent);
             }
         });
 
