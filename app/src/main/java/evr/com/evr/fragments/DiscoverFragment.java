@@ -15,6 +15,8 @@ import evr.com.evr.R;
 import evr.com.evr.activities.DiscoverSectionActivity;
 import evr.com.evr.activities.VrModeActivity;
 import evr.com.evr.adapters.DiscoverGridViewAdapter;
+import evr.com.evr.models.DiscoverSection;
+import evr.com.evr.utils.Constants;
 import evr.com.evr.utils.Stubs;
 
 /**
@@ -53,6 +55,8 @@ public class DiscoverFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 Intent discoverSectionIntent = new Intent(getActivity(), DiscoverSectionActivity.class);
+                DiscoverSection section = (DiscoverSection) parent.getAdapter().getItem(position);
+                discoverSectionIntent.putExtra(Constants.EXTRA_SECTION_NAME, section.getTitle());
                 startActivity(discoverSectionIntent);
             }
         });

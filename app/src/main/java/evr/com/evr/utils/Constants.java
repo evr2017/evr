@@ -6,7 +6,7 @@ package evr.com.evr.utils;
 
 public class Constants {
 
-    public final static String[] menuSections = new String[]{"Home", "Discover", "About Us"};
+    public static final String EXTRA_SECTION_NAME="SECTION_NAME";
 
 
 }

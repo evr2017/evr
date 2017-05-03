@@ -16,9 +16,12 @@ import android.widget.Toast;
 import com.google.vr.sdk.widgets.video.VrVideoEventListener;
 import com.google.vr.sdk.widgets.video.VrVideoView;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 
 import evr.com.evr.R;
+import evr.com.evr.utils.Constants;
 
 public class DiscoverSectionActivity extends AppCompatActivity {
     private static final String TAG = DiscoverSectionActivity.class.getSimpleName();
@@ -63,7 +66,7 @@ public class DiscoverSectionActivity extends AppCompatActivity {
      * video.
      */
     private SeekBar seekBar;
-    private TextView statusText;
+    private TextView statusText, title;
 
     private ImageButton volumeToggle;
     private boolean isMuted;
@@ -79,9 +82,14 @@ public class DiscoverSectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discover_section);
 
+        String sectionName = getIntent().getExtras().getString(Constants.EXTRA_SECTION_NAME);
+
         seekBar = (SeekBar) findViewById(R.id.seek_bar);
         seekBar.setOnSeekBarChangeListener(new SeekBarListener());
         statusText = (TextView) findViewById(R.id.status_text);
+        title = (TextView) findViewById(R.id.title);
+
+        title.setText(sectionName);
 
         // Bind input and output objects for the view.
         videoWidgetView = (VrVideoView) findViewById(R.id.video_view);
