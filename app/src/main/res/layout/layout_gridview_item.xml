@@ -16,5 +16,6 @@
         android:text="Restaurants"
         android:gravity="center"
         android:background="#99000000"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white"
+        android:visibility="gone"/>
 </evr.com.evr.views.GridViewItem>
