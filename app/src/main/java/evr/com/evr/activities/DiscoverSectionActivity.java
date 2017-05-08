@@ -68,7 +68,7 @@ public class DiscoverSectionActivity extends AppCompatActivity {
     private SeekBar seekBar;
     private TextView statusText, title;
 
-    private ImageButton volumeToggle;
+    private ImageButton volumeToggle, backButton;
     private boolean isMuted;
 
     /**
@@ -88,6 +88,7 @@ public class DiscoverSectionActivity extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBarListener());
         statusText = (TextView) findViewById(R.id.status_text);
         title = (TextView) findViewById(R.id.title);
+        backButton = (ImageButton) findViewById(R.id.btn_back);
 
         title.setText(sectionName);
 
@@ -100,6 +101,13 @@ public class DiscoverSectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setIsMuted(!isMuted);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 
