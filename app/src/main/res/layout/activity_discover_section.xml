@@ -5,88 +5,71 @@
     android:background="@android:color/white">
 
     <LinearLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/main_layout"
-        android:padding="10dip"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="10dip">
 
-        <LinearLayout android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/btn_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_action_back"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                />
-
-            <TextView
-                android:id="@+id/title"
-                style="@style/ContentText"
-                android:textSize="@dimen/title_text_size"
-                android:textStyle="bold"
-                android:text="@string/title" />
-        </LinearLayout>
-
+        <include layout="@layout/header_layout" />
 
         <TextView
             android:id="@+id/subtitle"
             style="@style/ContentText"
-            android:textSize="@dimen/caption_text_size"
-            android:text="@string/subtitle" />
+            android:text="@string/subtitle"
+            android:textSize="@dimen/caption_text_size" />
 
         <TextView
             android:id="@+id/paragraph1"
             style="@style/ContentText"
-            android:textSize="@dimen/paragragh_text_size"
-            android:text="@string/paragraph1" />
+            android:text="@string/paragraph1"
+            android:textSize="@dimen/paragragh_text_size" />
 
         <com.google.vr.sdk.widgets.video.VrVideoView
             android:id="@+id/video_view"
             android:layout_width="match_parent"
-            android:scrollbars="@null"
-            android:layout_height="250dip"/>
+            android:layout_height="250dip"
+            android:scrollbars="@null" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
             <!-- Seeking UI & progress indicator.-->
             <SeekBar
                 android:id="@+id/seek_bar"
                 style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
                 android:layout_height="32dp"
-                android:layout_weight="8"
-                android:layout_width="0dp"/>
+                android:layout_weight="8" />
+
             <ImageButton
-                android:background="@android:color/transparent"
                 android:id="@+id/volume_toggle"
-                android:paddingTop="4dp"
-                android:paddingStart="0dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/volume_on"/>
+                android:background="@android:color/transparent"
+                android:paddingStart="0dp"
+                android:paddingTop="4dp"
+                android:src="@drawable/volume_on" />
         </LinearLayout>
+
         <TextView
             android:id="@+id/status_text"
-            android:text="Loading Video..."
-            android:layout_centerInParent="true"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:textSize="@dimen/caption_text_size"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingEnd="32dp"
             android:paddingStart="32dp"
-            android:paddingEnd="32dp"/>
+            android:text="Loading Video..."
+            android:textSize="@dimen/caption_text_size" />
 
         <TextView
             android:id="@+id/paragraph2"
             style="@style/ContentText"
-            android:textSize="@dimen/paragragh_text_size"
-            android:text="@string/paragraph2" />
+            android:text="@string/paragraph2"
+            android:textSize="@dimen/paragragh_text_size" />
 
     </LinearLayout>
 </ScrollView>
