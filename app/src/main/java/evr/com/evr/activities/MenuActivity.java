@@ -29,14 +29,7 @@ import android.support.annotation.NonNull;
  */
 
 public class MenuActivity extends AppCompatActivity{
-    /**
-     *
-     * @return
-     */
-    public static MenuActivity newInstance() {
-        MenuActivity fragment = new MenuActivity();
-        return fragment;
-    }
+
     /**
      * The {@link ViewPager} that will host the section contents.
      */
