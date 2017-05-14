@@ -3,6 +3,8 @@
     package="evr.com.evr">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_app_icon"
@@ -43,6 +45,11 @@
             android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" />
         <activity android:name=".activities.DiscoverSectionActivity" />
+        <activity
+            android:name=".activities.VrWebViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".activities.DiscoverDetailActivity"
             android:screenOrientation="portrait" />

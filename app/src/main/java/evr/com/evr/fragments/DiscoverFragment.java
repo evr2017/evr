@@ -15,6 +15,7 @@ import evr.com.evr.R;
 import evr.com.evr.activities.DiscoverDetailActivity;
 import evr.com.evr.activities.DiscoverSectionActivity;
 import evr.com.evr.activities.VrModeActivity;
+import evr.com.evr.activities.VrWebViewActivity;
 import evr.com.evr.adapters.DiscoverGridViewAdapter;
 import evr.com.evr.models.DiscoverSection;
 import evr.com.evr.utils.Constants;
@@ -67,6 +68,7 @@ public class DiscoverFragment extends Fragment {
         vrButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Intent vrModeIntent = new Intent(getActivity(), VrWebViewActivity.class);
                 Intent vrModeIntent = new Intent(getActivity(), VrModeActivity.class);
                 //Intent vrModeIntent = new Intent(getActivity(), DiscoverDetailActivity.class);
                 startActivity(vrModeIntent);
