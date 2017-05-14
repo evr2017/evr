@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.GridView;
 
 import evr.com.evr.R;
+import evr.com.evr.activities.DiscoverDetailActivity;
 import evr.com.evr.activities.DiscoverSectionActivity;
 import evr.com.evr.activities.VrModeActivity;
 import evr.com.evr.activities.VrWebViewActivity;
@@ -55,7 +56,8 @@ public class DiscoverFragment extends Fragment {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Intent discoverSectionIntent = new Intent(getActivity(), DiscoverSectionActivity.class);
+                //Intent discoverSectionIntent = new Intent(getActivity(), DiscoverSectionActivity.class);
+                Intent discoverSectionIntent = new Intent(getActivity(), DiscoverDetailActivity.class);
                 DiscoverSection section = (DiscoverSection) parent.getAdapter().getItem(position);
                 discoverSectionIntent.putExtra(Constants.EXTRA_SECTION_NAME, section.getTitle());
                 startActivity(discoverSectionIntent);
@@ -66,12 +68,12 @@ public class DiscoverFragment extends Fragment {
         vrButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent vrModeIntent = new Intent(getActivity(), VrModeActivity.class);
-                Intent vrModeIntent = new Intent(getActivity(), VrWebViewActivity.class);
+//                Intent vrModeIntent = new Intent(getActivity(), VrWebViewActivity.class);
+                Intent vrModeIntent = new Intent(getActivity(), VrModeActivity.class);
+                //Intent vrModeIntent = new Intent(getActivity(), DiscoverDetailActivity.class);
                 startActivity(vrModeIntent);
             }
         });
-
 
 
     }
