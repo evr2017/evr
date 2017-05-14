@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="evr.com.evr">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_app_icon"
@@ -12,7 +13,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyB0RnsDSVoPKo8vmeL5OsNf0akty6pEaxI" />
+            android:value="AIzaSyDsTB1C9kGxC2JLHji9WnNBUdV0ydcAZPs" />
 
         <activity
             android:name=".MainPage"
