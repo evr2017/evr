@@ -1,19 +1,11 @@
 package evr.com.evr.activities;
 
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
 import evr.com.evr.R;
@@ -21,14 +13,12 @@ import evr.com.evr.fragments.AboutUsFragment;
 import evr.com.evr.fragments.DiscoverFragment;
 import evr.com.evr.fragments.HomeFragment;
 import evr.com.evr.fragments.LocationFragment;
-import evr.com.evr.utils.Constants;
-import android.support.annotation.NonNull;
 
 /**
  * Created by daryl.t.rollon on 5/2/2017.
  */
 
-public class MenuActivity extends AppCompatActivity{
+public class MenuActivity extends BaseActivity {
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -38,10 +28,6 @@ public class MenuActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
         setContentView(R.layout.activity_main_navigation);
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
@@ -50,25 +36,40 @@ public class MenuActivity extends AppCompatActivity{
                 (new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.frame_layout);
                         Fragment selectedFragment = null;
                         switch (item.getItemId()) {
 
                             case R.id.action_item1:
-                                selectedFragment = HomeFragment.newInstance();
+                                //Prevents fragment from being recreated if it's the current active.
+                                if (!(currentFragment instanceof HomeFragment)) {
+                                    selectedFragment = HomeFragment.newInstance();
+                                }
                                 break;
                             case R.id.action_item2:
-                                selectedFragment = AboutUsFragment.newInstance();
+                                if (!(currentFragment instanceof AboutUsFragment)) {
+                                    selectedFragment = AboutUsFragment.newInstance();
+                                }
                                 break;
                             case R.id.action_item3:
-                                selectedFragment = LocationFragment.newInstance();
+                                if (!(currentFragment instanceof LocationFragment)) {
+                                    selectedFragment = LocationFragment.newInstance();
+                                }
                                 break;
                             case R.id.action_item4:
-                                selectedFragment = DiscoverFragment.newInstance();
+                                if (!(currentFragment instanceof DiscoverFragment)) {
+                                    selectedFragment = DiscoverFragment.newInstance();
+                                }
                                 break;
                         }
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_layout, selectedFragment);
-                        transaction.commit();
+
+                        if (selectedFragment != null) {
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.frame_layout, selectedFragment);
+                            transaction.commit();
+                        }
+
                         return true;
                     }
                 });

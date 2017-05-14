@@ -6,13 +6,10 @@ import android.content.res.AssetManager;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.util.Pair;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -26,7 +23,7 @@ import java.io.InputStream;
 
 import evr.com.evr.R;
 
-public class VrModeActivity extends AppCompatActivity {
+public class VrModeActivity extends BaseActivity {
     private final String TAG = getClass().getSimpleName();
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
@@ -67,12 +64,6 @@ public class VrModeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
-
         setContentView(R.layout.activity_vr_mode);
         mContentView = findViewById(R.id.fullscreen_content);
         panoWidgetView = (VrPanoramaView) findViewById(R.id.pano_view);

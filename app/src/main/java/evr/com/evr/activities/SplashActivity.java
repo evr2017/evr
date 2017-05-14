@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import evr.com.evr.R;
 
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
     /** Duration of wait **/
     private final int SPLASH_DISPLAY_LENGTH = 1000;
 
@@ -16,10 +16,6 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
         setContentView(R.layout.splash_screen);
 
         /* New Handler to start the Menu-Activity

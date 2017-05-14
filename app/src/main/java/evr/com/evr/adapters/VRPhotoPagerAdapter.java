@@ -23,12 +23,19 @@ public class VRPhotoPagerAdapter extends PagerAdapter {
 
     private ArrayList<VRPhoto> vrPhotos;
 
-    public VRPhotoPagerAdapter(ArrayList<VRPhoto> vrPhotos) {
+    private CardBoardViewClickListener cardBoardViewClickListener;
+
+    public interface CardBoardViewClickListener {
+        void onCardBoardViewClicked(int position);
+    }
+
+    public VRPhotoPagerAdapter(ArrayList<VRPhoto> vrPhotos, CardBoardViewClickListener cardBoardViewClickListener) {
         this.vrPhotos = vrPhotos;
+        this.cardBoardViewClickListener = cardBoardViewClickListener;
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
 
         Context context = container.getContext();
 
@@ -36,8 +43,17 @@ public class VRPhotoPagerAdapter extends PagerAdapter {
                 .inflate(R.layout.discover_detail_photo_item, container, false);
 
         ImageView vrPhoto = (ImageView) itemView.findViewById(R.id.discover_detail_grid_item);
-
         Glide.with(context).load(vrPhotos.get(position).getFullImageUrl()).into(vrPhoto);
+
+        if (cardBoardViewClickListener != null) {
+            ImageView cardBoardView = (ImageView) itemView.findViewById(R.id.cardboard_view_icon);
+            cardBoardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    cardBoardViewClickListener.onCardBoardViewClicked(position);
+                }
+            });
+        }
 
         container.addView(itemView);
 

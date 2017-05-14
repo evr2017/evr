@@ -52,7 +52,8 @@
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".activities.DiscoverDetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/FullscreenTheme" />
 
         <activity
             android:name=".activities.VRNavigationActivity"

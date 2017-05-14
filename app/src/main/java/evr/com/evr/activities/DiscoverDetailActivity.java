@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -20,7 +19,7 @@ import evr.com.evr.adapters.VRPhotoPagerAdapter;
 import evr.com.evr.models.VRPhoto;
 import evr.com.evr.utils.Constants;
 
-public class DiscoverDetailActivity extends AppCompatActivity {
+public class DiscoverDetailActivity extends BaseActivity {
 
     @BindView(R.id.vr_photos_viewpager)
     protected ViewPager vrPhotosViewPager;
@@ -30,9 +29,6 @@ public class DiscoverDetailActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_back)
     protected ImageView backButton;
-
-    @BindView(R.id.cardboard_view_icon)
-    protected ImageView cardBoardVewIcon;
 
     private ArrayList<VRPhoto> photos;
 
@@ -52,14 +48,6 @@ public class DiscoverDetailActivity extends AppCompatActivity {
         onBackPressed();
     }
 
-    @OnClick(R.id.cardboard_view_icon)
-    protected void showCardBoardViewOfImage() {
-        Intent intent = new Intent(this, VRNavigationActivity.class);
-        intent.putExtra(Constants.VR_PHOTOS, photos);
-        intent.putExtra(Constants.POSITION, vrPhotosViewPager.getCurrentItem());
-        startActivity(intent);
-    }
-
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -72,7 +60,16 @@ public class DiscoverDetailActivity extends AppCompatActivity {
 
     private void initializeViewPager() {
 
-        VRPhotoPagerAdapter adapter = new VRPhotoPagerAdapter(photos);
+        VRPhotoPagerAdapter adapter = new VRPhotoPagerAdapter(photos, new VRPhotoPagerAdapter.CardBoardViewClickListener() {
+            @Override
+            public void onCardBoardViewClicked(int position) {
+                Intent intent = new Intent(DiscoverDetailActivity.this, VRNavigationActivity.class);
+                intent.putExtra(Constants.VR_PHOTOS, photos);
+                intent.putExtra(Constants.POSITION, position);
+                startActivity(intent);
+            }
+        });
+
         vrPhotosViewPager.setAdapter(adapter);
         vrPhotosViewPager.setClipToPadding(false);
 
