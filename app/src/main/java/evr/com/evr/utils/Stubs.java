@@ -5,6 +5,7 @@ import java.util.List;
 
 import evr.com.evr.R;
 import evr.com.evr.models.DiscoverSection;
+import evr.com.evr.models.HomeSection;
 
 /**
  * Created by karenmatias on 30/04/2017.
@@ -23,6 +24,17 @@ public class Stubs {
         discoverSections.add(new DiscoverSection("Parks", R.drawable.menu_6));
 
         return discoverSections;
+    }
+
+    public static List<HomeSection> getHomeSections(){
+        List<HomeSection> homeSections = new ArrayList<>();
+
+        homeSections.add(new HomeSection("Offer 1", R.drawable.planet_earth));
+        homeSections.add(new HomeSection("Offer 2", R.drawable.jupiter));
+        homeSections.add(new HomeSection("Offer 3", R.drawable.solar_system));
+        homeSections.add(new HomeSection("Offer 4", R.drawable.startup));
+
+        return homeSections;
     }
 }
 

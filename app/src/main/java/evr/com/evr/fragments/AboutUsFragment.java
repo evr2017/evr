@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import evr.com.evr.R;
@@ -29,7 +31,13 @@ public class AboutUsFragment  extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_about, container, false);
         TextView textView = (TextView) rootView.findViewById(R.id.textView1);
         textView.setText(getClass().getSimpleName());
+
+        WebView myWebView = (WebView) rootView.findViewById(R.id.webView1);
+        myWebView.loadUrl("http://192.168.43.111:8887");
+        WebSettings webSettings=myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         return rootView;
+
     }
 }
 
