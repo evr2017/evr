@@ -5,7 +5,9 @@ import java.util.List;
 
 import evr.com.evr.R;
 import evr.com.evr.models.DiscoverSection;
+import evr.com.evr.models.FeaturedVideo;
 import evr.com.evr.models.HomeSection;
+import evr.com.evr.models.Offer;
 
 /**
  * Created by karenmatias on 30/04/2017.
@@ -36,5 +38,29 @@ public class Stubs {
 
         return homeSections;
     }
+
+    public static List<Offer> getOffers(){
+        List<Offer> offers = new ArrayList<>();
+        offers.add(new Offer("Free Room upsize! Check space here!", R.drawable.menu_1));
+        offers.add(new Offer("50% discount!", R.drawable.menu_2));
+        offers.add(new Offer("Free breakfast", R.drawable.menu_3));
+        offers.add(new Offer("+ 12 hours stay", R.drawable.menu_4));
+        offers.add(new Offer("Exclusive access to pool", R.drawable.menu_5));
+
+        return offers;
+    }
+
+    public static List<FeaturedVideo> getFeaturedVideos(){
+        List<FeaturedVideo> featuredVideos = new ArrayList<>();
+        featuredVideos.add(new FeaturedVideo("Free Room upsize! Check space here!", "MdcrZFpNjTA", "https://www.youtube.com/watch?v=MdcrZFpNjTA"));
+        featuredVideos.add(new FeaturedVideo("50% discount!", "1LZnpWjpXzw", "https://www.youtube.com/watch?v=1LZnpWjpXzw"));
+        featuredVideos.add(new FeaturedVideo("Free breakfast", "Wc4kOe_ZfBk", "https://www.youtube.com/watch?v=Wc4kOe_ZfBk"));
+        featuredVideos.add(new FeaturedVideo("+ 12 hours stay", "-xNN-bJQ4vI", "https://www.youtube.com/watch?v=-xNN-bJQ4vI"));
+        featuredVideos.add(new FeaturedVideo("Exclusive access to pool", "6Vze-ARrG5o", "https://www.youtube.com/watch?v=6Vze-ARrG5o"));
+
+        return featuredVideos;
+    }
+
+
 }
 

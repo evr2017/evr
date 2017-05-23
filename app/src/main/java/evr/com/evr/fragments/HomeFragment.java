@@ -2,6 +2,7 @@ package evr.com.evr.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v17.leanback.widget.HorizontalGridView;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,8 @@ import evr.com.evr.R;
 import evr.com.evr.activities.MenuActivity;
 import evr.com.evr.adapters.DiscoverGridViewAdapter;
 import evr.com.evr.adapters.HomeGridViewAdapter;
+import evr.com.evr.adapters.HorizontalGridAdapter;
+import evr.com.evr.adapters.VideoGridAdapter;
 import evr.com.evr.utils.Stubs;
 
 /**
@@ -33,6 +36,7 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
     }
 
     private SliderLayout mDemoSlider;
+    private HorizontalGridView offersGridView, videoGridView;
 
     public static Fragment newInstance() {
         Fragment fragment = new HomeFragment();
@@ -45,6 +49,15 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         mDemoSlider = (SliderLayout) rootView.findViewById(R.id.slider);
+
+        offersGridView = (HorizontalGridView) rootView.findViewById(R.id.gridView_offers);
+        videoGridView = (HorizontalGridView) rootView.findViewById(R.id.gridView_videos);
+
+        HorizontalGridAdapter adapter = new HorizontalGridAdapter(getActivity(), Stubs.getOffers());
+        VideoGridAdapter adapter1 = new VideoGridAdapter(getActivity(), Stubs.getFeaturedVideos());
+        offersGridView.setAdapter(adapter);
+        videoGridView.setAdapter(adapter1);
+
 
         HashMap<String,String> url_maps = new HashMap<String, String>();
         url_maps.put("Watch Coldplay Live", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
@@ -62,7 +75,7 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
             textSliderView
                     .description(name)
                     .image(file_maps.get(name))
-                    .setScaleType(BaseSliderView.ScaleType.Fit)
+                    .setScaleType(BaseSliderView.ScaleType.CenterCrop)
                     .setOnSliderClickListener(HomeFragment.this);
 
             //add your extra information
@@ -84,8 +97,6 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        GridView gridview = (GridView) getView().findViewById(R.id.gridViewHome);
-        gridview.setAdapter(new HomeGridViewAdapter(getActivity(), Stubs.getHomeSections()));
     }
     @Override
     public void onSliderClick(BaseSliderView slider) {
