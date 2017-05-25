@@ -13,9 +13,7 @@ import android.widget.GridView;
 
 import evr.com.evr.R;
 import evr.com.evr.activities.DiscoverDetailActivity;
-import evr.com.evr.activities.DiscoverSectionActivity;
-import evr.com.evr.activities.VrModeActivity;
-import evr.com.evr.activities.VrWebViewActivity;
+import evr.com.evr.activities.WebViewVRModeActivity;
 import evr.com.evr.adapters.DiscoverGridViewAdapter;
 import evr.com.evr.models.DiscoverSection;
 import evr.com.evr.utils.Constants;
@@ -68,8 +66,23 @@ public class DiscoverFragment extends Fragment {
         vrButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                /*String url = "http://localhost:8080/Reticulum-master1/examples/basic.html";
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.setPackage("com.android.chrome");
+                try {
+                    startActivity(i);
+                } catch (ActivityNotFoundException e) {
+                    // Chrome is probably not installed
+                    // Try with the default browser
+                    i.setPackage(null);
+                    startActivity(i);
+                }*/
+
 //                Intent vrModeIntent = new Intent(getActivity(), VrWebViewActivity.class);
-                Intent vrModeIntent = new Intent(getActivity(), VrModeActivity.class);
+                //Intent vrModeIntent = new Intent(getActivity(), VrModeActivity.class);
+                Intent vrModeIntent = new Intent(getActivity(), WebViewVRModeActivity.class);
                 //Intent vrModeIntent = new Intent(getActivity(), DiscoverDetailActivity.class);
                 startActivity(vrModeIntent);
             }
