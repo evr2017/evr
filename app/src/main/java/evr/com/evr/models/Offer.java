@@ -5,20 +5,12 @@ package evr.com.evr.models;
  */
 
 public class Offer {
-    private String title;
+    private int previewImageId;
     private int imageId;
 
-    public Offer(String title, int imageId){
-        this.title = title;
+    public Offer(int previewImageId, int imageId){
         this.imageId = imageId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+        this.previewImageId = previewImageId;
     }
 
     public int getImageId() {
@@ -27,5 +19,13 @@ public class Offer {
 
     public void setImageId(int imageId) {
         this.imageId = imageId;
+    }
+
+    public int getPreviewImageId() {
+        return previewImageId;
+    }
+
+    public void setPreviewImageId(int previewImageId) {
+        this.previewImageId = previewImageId;
     }
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_offer_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="evr.com.evr.activities.OfferDetailActivity">
+
+
+    <ImageView
+        android:layout_alignParentTop="true"
+        android:id="@+id/offer_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/offer1"
+        android:scaleType="fitXY"/>
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_close"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerCrop"/>
+
+</RelativeLayout>

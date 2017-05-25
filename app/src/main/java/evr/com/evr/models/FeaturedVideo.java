@@ -5,12 +5,11 @@ package evr.com.evr.models;
  */
 
 public class FeaturedVideo {
-    private String title;
     private String videoId;
     private String videoUrl;
 
 
-    public FeaturedVideo(String title, String videoId, String videoUrl){
+    public FeaturedVideo(String videoId, String videoUrl){
         this.videoId = videoId;
         this.videoUrl = videoUrl;
     }

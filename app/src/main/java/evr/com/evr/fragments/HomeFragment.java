@@ -7,8 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
-import android.widget.TextView;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
@@ -19,10 +17,7 @@ import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import java.util.HashMap;
 
 import evr.com.evr.R;
-import evr.com.evr.activities.MenuActivity;
-import evr.com.evr.adapters.DiscoverGridViewAdapter;
-import evr.com.evr.adapters.HomeGridViewAdapter;
-import evr.com.evr.adapters.HorizontalGridAdapter;
+import evr.com.evr.adapters.OffersGridAdapter;
 import evr.com.evr.adapters.VideoGridAdapter;
 import evr.com.evr.utils.Stubs;
 
@@ -53,10 +48,10 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
         offersGridView = (HorizontalGridView) rootView.findViewById(R.id.gridView_offers);
         videoGridView = (HorizontalGridView) rootView.findViewById(R.id.gridView_videos);
 
-        HorizontalGridAdapter adapter = new HorizontalGridAdapter(getActivity(), Stubs.getOffers());
-        VideoGridAdapter adapter1 = new VideoGridAdapter(getActivity(), Stubs.getFeaturedVideos());
-        offersGridView.setAdapter(adapter);
-        videoGridView.setAdapter(adapter1);
+        OffersGridAdapter offersGridAdapter = new OffersGridAdapter(getActivity(), Stubs.getOffers());
+        VideoGridAdapter videoGridAdapter = new VideoGridAdapter(getActivity(), Stubs.getFeaturedVideos());
+        offersGridView.setAdapter(offersGridAdapter);
+        videoGridView.setAdapter(videoGridAdapter);
 
 
         HashMap<String,String> url_maps = new HashMap<String, String>();

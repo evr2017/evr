@@ -12,7 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDsTB1C9kGxC2JLHji9WnNBUdV0ydcAZPs" />
@@ -54,13 +53,12 @@
             android:name=".activities.DiscoverDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullscreenTheme" />
-
         <activity
             android:name=".activities.VRNavigationActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="landscape" />
-
-
+        <activity android:name=".activities.OfferDetailActivity"
+            android:theme="@style/FullscreenTheme" ></activity>
     </application>
 
 </manifest>
