@@ -1,8 +1,10 @@
 package evr.com.evr.fragments;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.customtabs.CustomTabsIntent;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,25 +68,22 @@ public class DiscoverFragment extends Fragment {
         vrButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                /*String url = "http://localhost:8080/Reticulum-master1/examples/basic.html";
-                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                i.setPackage("com.android.chrome");
-                try {
-                    startActivity(i);
-                } catch (ActivityNotFoundException e) {
-                    // Chrome is probably not installed
-                    // Try with the default browser
-                    i.setPackage(null);
-                    startActivity(i);
-                }*/
-
-//                Intent vrModeIntent = new Intent(getActivity(), VrWebViewActivity.class);
+                //Intent vrModeIntent = new Intent(getActivity(), VrWebViewActivity.class);
                 //Intent vrModeIntent = new Intent(getActivity(), VrModeActivity.class);
-                Intent vrModeIntent = new Intent(getActivity(), WebViewVRModeActivity.class);
                 //Intent vrModeIntent = new Intent(getActivity(), DiscoverDetailActivity.class);
-                startActivity(vrModeIntent);
+                //Intent vrModeIntent = new Intent(getActivity(), WebViewVRModeActivity.class);
+                //startActivity(vrModeIntent);
+
+                Uri uri = Uri.parse("http://localhost:8080/Reticulum-master1/examples/basic.html");
+                // create an intent builder
+                CustomTabsIntent.Builder intentBuilder = new CustomTabsIntent.Builder();
+                intentBuilder.enableUrlBarHiding();
+                intentBuilder.setStartAnimations(getContext(), R.anim.slide_in_left_anim, R.anim.slide_out_left_anim);
+                intentBuilder.setExitAnimations(getContext(), android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                // build custom tabs intent
+                CustomTabsIntent customTabsIntent = intentBuilder.build();
+                // launch the url
+                customTabsIntent.launchUrl(getContext(), uri);
             }
         });
 
