@@ -1,0 +1,15 @@
+{
+  "outdoors": [
+    {
+      "name": "Mega Coaster: Get Ready for the Drop",
+      "preview": "video",
+      "url": "https://www.youtube.com/watch?v=-xNN-bJQ4vI",
+      "videoId": "-xNN-bJQ4vI"
+    },
+    {
+      "name": "Microtel",
+      "preview": "image",
+      "url": "file:///android_asset/stubimages/microtel_offer.jpg"
+    }
+  ]
+}

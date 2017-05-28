@@ -1,0 +1,25 @@
+{
+  "accommodations": [
+    {
+      "name": "Alcatel Lucent",
+      "preview": "video",
+      "url": "https://www.youtube.com/watch?v=MdcrZFpNjTA",
+      "videoId": "MdcrZFpNjTA"
+    },
+    {
+      "name": "Le Royal Park",
+      "preview": "image",
+      "url": "file:///android_asset/stubimages/le_royal_park_offer.jpg"
+    },
+    {
+      "name": "Microtel",
+      "preview": "image",
+      "url": "file:///android_asset/stubimages/microtel_offer.jpg"
+    },
+    {
+      "name": "Nature Place",
+      "preview": "image",
+      "url": "file:///android_asset/stubimages/nature_place_offer.jpg"
+    }
+  ]
+}

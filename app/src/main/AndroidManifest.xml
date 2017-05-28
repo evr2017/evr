@@ -60,13 +60,19 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="landscape" />
 
-        <activity android:name=".activities.OfferDetailActivity"
-            android:theme="@style/FullscreenTheme" ></activity>
+        <activity
+            android:name=".activities.OfferDetailActivity"
+            android:theme="@style/FullscreenTheme"></activity>
 
         <activity
             android:name=".activities.WebViewVRModeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="landscape"
+            android:theme="@style/FullscreenTheme" />
+
+        <activity
+            android:name=".activities.DiscoverContentActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/FullscreenTheme" />
 
     </application>

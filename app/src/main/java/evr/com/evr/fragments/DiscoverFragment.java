@@ -15,7 +15,7 @@ import android.widget.GridView;
 
 import evr.com.evr.R;
 import evr.com.evr.activities.DiscoverDetailActivity;
-import evr.com.evr.activities.WebViewVRModeActivity;
+import evr.com.evr.activities.DiscoverContentActivity;
 import evr.com.evr.adapters.DiscoverGridViewAdapter;
 import evr.com.evr.models.DiscoverSection;
 import evr.com.evr.utils.Constants;
@@ -56,11 +56,23 @@ public class DiscoverFragment extends Fragment {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                //Intent discoverSectionIntent = new Intent(getActivity(), DiscoverSectionActivity.class);
-                Intent discoverSectionIntent = new Intent(getActivity(), DiscoverDetailActivity.class);
                 DiscoverSection section = (DiscoverSection) parent.getAdapter().getItem(position);
-                discoverSectionIntent.putExtra(Constants.EXTRA_SECTION_NAME, section.getTitle());
-                startActivity(discoverSectionIntent);
+                Intent intent = new Intent();
+                //switch (position) {
+                    //case 0:
+                    //case 1:
+                    //case 2:
+                    //case 3:
+                    //case 4:
+                    //case 5:
+                        intent.setClass(getActivity(), DiscoverContentActivity.class);
+                        intent.putExtra(Constants.EXTRA_SECTION_NAME, section.getTitle());
+                        //break;
+                    //default:
+                        //intent.setClass(getActivity(), DiscoverDetailActivity.class);
+                        //intent.putExtra(Constants.EXTRA_SECTION_NAME, section.getTitle());
+                //}
+                startActivity(intent);
             }
         });
 
@@ -68,6 +80,7 @@ public class DiscoverFragment extends Fragment {
         vrButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 //Intent vrModeIntent = new Intent(getActivity(), VrWebViewActivity.class);
                 //Intent vrModeIntent = new Intent(getActivity(), VrModeActivity.class);
                 //Intent vrModeIntent = new Intent(getActivity(), DiscoverDetailActivity.class);
@@ -78,8 +91,6 @@ public class DiscoverFragment extends Fragment {
                 // create an intent builder
                 CustomTabsIntent.Builder intentBuilder = new CustomTabsIntent.Builder();
                 intentBuilder.enableUrlBarHiding();
-                intentBuilder.setStartAnimations(getContext(), R.anim.slide_in_left_anim, R.anim.slide_out_left_anim);
-                intentBuilder.setExitAnimations(getContext(), android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 // build custom tabs intent
                 CustomTabsIntent customTabsIntent = intentBuilder.build();
                 // launch the url

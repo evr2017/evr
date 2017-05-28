@@ -1,0 +1,44 @@
+{
+  "restaurants": [
+    {
+      "restaurantName": "Da Gama Restaurant",
+      "description": "Da Gama takes its name from the great Portuguese explorer who discovered these tempting cuisines hundreds of years ago, We specialize in Portuguese dishes including salad Portuguese, Discovery, Gambas, Piexes Assado, Fish Peri Peri and Galinha Cafreal and also Mexican favorites such as our not-to-be-missed Fajitas, Enchiladas, Quesadillas and Coyote Crunch. The carefully balanced ambience is just right fro casual or relaxed fine dining.",
+      "operatingHours": "12:30PM to 1AM",
+      "address": "Century Village Charged Parking - Dubai - United Arab Emirates",
+      "thumbnail": "file:///android_asset/stubimages/da_gama.jpg",
+      "contactNumber": "04-2823636"
+    },
+    {
+      "restaurantName": "The Thai Kitchen",
+      "description": "The Thai Kitchen at Park Hyatt Dubai presents authentic Thai dishes prepared by native chefs. This award-winning Dubai hotel restaurant offers three live kitchens – one each for wok, grill and noodles – as well as an additional kitchen devoted to the preparation of traditional Thai desserts. Reminiscent of the hustle and bustle of downtown Bangkok, The Thai Kitchen places its tables near each of the kitchens, allowing restaurant guests to enjoy the sights and aromas of classic Thai cuisine preparation.\n\nChef de Cuisine at The Thai Kitchen, Chef Supattra Boonsrang  inspires guests with her aromatic signature creations that include Spicy Pomelo Salad and Roasted Red Duck Curry along with many other authentic Thai favorites. The Thai ambiance at The Thai Kitchen is ideal for casual and family dining.",
+      "operatingHours": "7:00PM to Midnight",
+      "address": "Dubai Creek Club Street, Park Hyatt Dubai Hotel - Dubai - United Arab Emirates",
+      "thumbnail": "file:///android_asset/stubimages/thai_kitchen_outdoor.jpg",
+      "contactNumber": "+971 4 602 1814"
+    },
+    {
+      "restaurantName": "Café Arabesque",
+      "description": "This celebrated Middle Eastern restaurant at Park Hyatt Dubai, presents culinary delights from the Levant region, influenced by the flavors of Jordan, Lebanon and Syria. Café Arabesque offers an exquisite culinary experience boasting the freshest of ingredients infused with traditional culinary heritage. Guests are invited for an all day dining experience, where our award winning chefs have curated a truly authentic environment.\nCafe Arabesque offers an extensive menu of Cold and Hot Mezzeh to select from along with delectable main course dishes served straight from the charcoal grill. Conclude the experience with a delightful selection of classic Levant desserts which are sure to tantalize the taste buds.",
+      "operatingHours": "6:30AM to 10:30AM, 12:30PM to 4:00PM, 6:00PM to 12:00 Midnight",
+      "address": "Park Hyatt Dubai, Sheikh Rashid Rd, Deira, opp Deira City Centre - Dubai - United Arab Emirates",
+      "thumbnail": "file:///android_asset/stubimages/2013_cafearabesque_base.jpg",
+      "contactNumber": "+971 4 602 1814"
+    },
+    {
+      "restaurantName": "Pool Bar",
+      "description": "The Pool Bar, considered one of the most tranquil Dubai bars, offers a large, spacious and peaceful setting, matching the peace of Amara Spa in which the outlet is integrated. Enjoy a variety of beverages and selected dishes served at the pool, the terrace or the sundeck area.",
+      "operatingHours": "9:00AM to 7:00PM",
+      "address": "Sheikh Rashid Rd - Dubai - United Arab Emirates",
+      "thumbnail": "file:///android_asset/stubimages/DXBPH_Pool-Bar.jpg",
+      "contactNumber": "+971 4 602 1814"
+    },
+    {
+      "restaurantName": "Oregano Restaurants - Dubai Media City",
+      "description": "Situated at the center of Media City and Knowledge village.\nA perfect combination for official lunch during the day and casual dining for family and friends after sunset.\nRich dinning ambiance with a perfect set of mouthwatering Ligurian inspired food.\nOpen from 10:30 AM to Midnight, seven days a week for dining, home delivery and take away.",
+      "operatingHours": "11:00am to 12:00 Midnight",
+      "address": "Office Park Building - Dubai - United Arab Emirates",
+      "thumbnail": "file:///android_asset/stubimages/oregano_media_city.jpg",
+      "contactNumber": "04 434 3010"
+    }
+  ]
+}

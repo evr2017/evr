@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "name": "Coldplay: A head full of dreams",
+      "preview": "image",
+      "url": "file:///android_asset/stubimages/event_coldplay.jpg"
+    },
+    {
+      "name": "Ironman 360",
+      "preview": "image",
+      "url": "file:///android_asset/stubimages/event_ironman360.jpg"
+    }
+  ]
+}

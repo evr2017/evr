@@ -1,0 +1,15 @@
+{
+  "museum": [
+    {
+      "name": "Children's City",
+      "preview": "image",
+      "url": "file:///android_asset/stubimages/museum_children_s_city.jpg",
+      "videoId": "-xNN-bJQ4vI"
+    },
+    {
+      "name": "Dubai Museum",
+      "preview": "image",
+      "url": "file:///android_asset/stubimages/museum_dubai.jpg"
+    }
+  ]
+}
