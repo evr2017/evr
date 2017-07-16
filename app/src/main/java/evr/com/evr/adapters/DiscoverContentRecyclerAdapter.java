@@ -27,12 +27,12 @@ import evr.com.evr.models.DiscoverVideo;
 
 public class DiscoverContentRecyclerAdapter extends RecyclerView.Adapter<DiscoverContentRecyclerAdapter.DiscoverViewHolder> {
 
-    private List<DiscoverItem> accomodations;
+    private List<DiscoverItem> accommodations;
 
     private DiscoverClickListener discoverClickListener;
 
     public DiscoverContentRecyclerAdapter(List<DiscoverItem> discoverItems, DiscoverClickListener discoverClickListener) {
-        this.accomodations = discoverItems;
+        this.accommodations = discoverItems;
         this.discoverClickListener = discoverClickListener;
     }
 
@@ -46,9 +46,9 @@ public class DiscoverContentRecyclerAdapter extends RecyclerView.Adapter<Discove
     @Override
     public void onBindViewHolder(final DiscoverViewHolder holder, final int position) {
 
-        final DiscoverItem discoverItem = accomodations.get(position);
+        final DiscoverItem discoverItem = accommodations.get(position);
         holder.headerRowLabel.setText(discoverItem.getName());
-        if (accomodations.get(position).getPreview() == DiscoverItemPreview.VIDEO) {
+        if (accommodations.get(position).getPreview() == DiscoverItemPreview.VIDEO) {
 
             String previewUrl = "http://img.youtube.com/vi/" + ((DiscoverVideo) discoverItem).getVideoId() + "/0.jpg";
             Glide.with(holder.itemView.getContext())
@@ -85,7 +85,7 @@ public class DiscoverContentRecyclerAdapter extends RecyclerView.Adapter<Discove
 
     @Override
     public int getItemCount() {
-        return accomodations.size();
+        return accommodations.size();
     }
 
     public class DiscoverViewHolder extends RecyclerView.ViewHolder {
@@ -106,5 +106,10 @@ public class DiscoverContentRecyclerAdapter extends RecyclerView.Adapter<Discove
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
+    }
+
+    public void updateList(List<DiscoverItem> accommodations) {
+        this.accommodations = accommodations;
+        notifyDataSetChanged();
     }
 }

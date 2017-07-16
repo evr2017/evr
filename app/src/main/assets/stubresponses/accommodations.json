@@ -7,7 +7,9 @@
       "details": "86 square metres|1 King + 2 Single beds all in one large space|Spacious bathroom with glass-enclosed shower and deep-soaking bathtub|Luxury bathroom amenities|Microfibre and terry bathrobes|Additional toilet|Nespresso machine and gourmet tea selections|Fully stocked minibar|42\" interactive flatscreen TV|Cable channels (free) and movies on demand (charges apply)|In-room safe|Iron and ironing board|Shoe brush and shoe horn|Non-smoking",
       "rating": "4.60",
       "price": "3,000 per night",
-      "vrViewURL": "https://evrviewer.firebaseapp.com?room=1"
+      "vrViewURL": "https://evrviewer.firebaseapp.com?room=1",
+      "availableFrom": 1498867200000,
+      "availableUntil": 1504137600000
     },
     {
       "name": "Deluxe Room",
@@ -16,25 +18,31 @@
       "details": "39 square metres|Spacious bathroom with glass-enclosed shower|42\" interactive flatscreen TV|Cable channels (free) and movies on demand (charges apply)|Free Wi-Fi",
       "rating": "4.50",
       "price": "2,000 per night",
-      "vrViewURL": "https://evrviewer.firebaseapp.com?room=2"
+      "vrViewURL": "https://evrviewer.firebaseapp.com?room=2",
+      "availableFrom": 1500076800000,
+      "availableUntil": 1504137600000
     },
     {
       "name": "Room 6",
       "preview": "image",
       "url": "file:///android_asset/accommodations/Room6.jpg",
       "details": "39 square metres|Spacious bathroom with glass-enclosed shower|42\" interactive flatscreen TV|Cable channels (free) and movies on demand (charges apply)|Free Wi-Fi",
-      "rating": "4.50",
+      "rating": "4.00",
       "price": "2,000 per night",
-      "vrViewURL": "https://evrviewer.firebaseapp.com?room=3"
+      "vrViewURL": "https://evrviewer.firebaseapp.com?room=3",
+      "availableFrom": 1501459200000,
+      "availableUntil": 1501459200000
     },
     {
       "name": "Room",
       "preview": "image",
       "url": "file:///android_asset/accommodations/Room.jpg",
       "details": "39 square metres|Spacious bathroom with glass-enclosed shower|42\" interactive flatscreen TV|Cable channels (free) and movies on demand (charges apply)|Free Wi-Fi",
-      "rating": "4.50",
+      "rating": "4.00",
       "price": "2,000 per night",
-      "vrViewURL": "https://evrviewer.firebaseapp.com?room=4"
+      "vrViewURL": "https://evrviewer.firebaseapp.com?room=4",
+      "availableFrom": 1501459200000,
+      "availableUntil": 1501459200000
     }
   ]
 }

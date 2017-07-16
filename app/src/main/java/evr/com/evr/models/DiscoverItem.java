@@ -20,6 +20,8 @@ public class DiscoverItem implements Parcelable {
     private String rating;
     private String price;
     private String vrViewURL;
+    private Long availableFrom;
+    private Long availableUntil;
 
     public DiscoverItem() {
     }
@@ -32,6 +34,8 @@ public class DiscoverItem implements Parcelable {
         setRating(response.optString("rating"));
         setPrice(response.optString("price"));
         setVrViewURL(response.optString("vrViewURL"));
+        setAvailableFrom(response.optLong("availableFrom", 0L));
+        setAvailableUntil(response.optLong("availableUntil", 0L));
     }
 
     protected DiscoverItem(Parcel in) {
@@ -41,6 +45,8 @@ public class DiscoverItem implements Parcelable {
         rating = in.readString();
         price = in.readString();
         vrViewURL = in.readString();
+        availableFrom = in.readLong();
+        availableUntil = in.readLong();
     }
 
     public static final Creator<DiscoverItem> CREATOR = new Creator<DiscoverItem>() {
@@ -111,6 +117,22 @@ public class DiscoverItem implements Parcelable {
         this.vrViewURL = vrViewURL;
     }
 
+    public Long getAvailableFrom() {
+        return availableFrom;
+    }
+
+    private void setAvailableFrom(Long availableFrom) {
+        this.availableFrom = availableFrom;
+    }
+
+    public long getAvailableUntil() {
+        return availableUntil;
+    }
+
+    private void setAvailableUntil(long availableUntil) {
+        this.availableUntil = availableUntil;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -124,5 +146,7 @@ public class DiscoverItem implements Parcelable {
         dest.writeString(rating);
         dest.writeString(price);
         dest.writeString(vrViewURL);
+        dest.writeLong(availableFrom);
+        dest.writeLong(availableUntil);
     }
 }
