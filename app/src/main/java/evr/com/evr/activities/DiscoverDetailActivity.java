@@ -1,13 +1,18 @@
 package evr.com.evr.activities;
 
-import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.view.ViewPager;
-import android.util.TypedValue;
+import android.support.customtabs.CustomTabsIntent;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -15,17 +20,30 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import evr.com.evr.R;
-import evr.com.evr.adapters.VRPhotoPagerAdapter;
+import evr.com.evr.adapters.RoomFeaturesRecyclerAdapter;
+import evr.com.evr.models.DiscoverItem;
 import evr.com.evr.models.VRPhoto;
 import evr.com.evr.utils.Constants;
 
 public class DiscoverDetailActivity extends BaseActivity {
 
-    @BindView(R.id.vr_photos_viewpager)
-    protected ViewPager vrPhotosViewPager;
+    @BindView(R.id.content_image)
+    protected ImageView previewImage;
 
     @BindView(R.id.title)
     protected TextView title;
+
+    @BindView(R.id.room_features_recycler_view)
+    protected RecyclerView roomFeaturesRecycler;
+
+    @BindView(R.id.room_rating)
+    protected RatingBar ratingBar;
+
+    @BindView(R.id.room_price_label)
+    protected TextView roomPrice;
+
+    @BindView(R.id.cardboard_view_icon)
+    protected ImageView cardViewIcon;
 
     @BindView(R.id.btn_back)
     protected ImageView backButton;
@@ -37,10 +55,6 @@ public class DiscoverDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.discover_detail_activity_layout);
         ButterKnife.bind(this);
-
-        String sectionName = getIntent().getExtras().getString(Constants.EXTRA_SECTION_NAME);
-        title.setText(sectionName);
-
     }
 
     @OnClick(R.id.btn_back)
@@ -52,50 +66,28 @@ public class DiscoverDetailActivity extends BaseActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        generateDummyVRPhotos();
-
-        initializeViewPager();
-
-    }
-
-    private void initializeViewPager() {
-
-        VRPhotoPagerAdapter adapter = new VRPhotoPagerAdapter(photos, new VRPhotoPagerAdapter.CardBoardViewClickListener() {
-            @Override
-            public void onCardBoardViewClicked(int position) {
-                Intent intent = new Intent(DiscoverDetailActivity.this, VRNavigationActivity.class);
-                intent.putExtra(Constants.VR_PHOTOS, photos);
-                intent.putExtra(Constants.POSITION, position);
-                startActivity(intent);
-            }
-        });
-
-        vrPhotosViewPager.setAdapter(adapter);
-        vrPhotosViewPager.setClipToPadding(false);
-
-        //For offset view
-        int paddingInPx = getPxFromDp(20);
-        vrPhotosViewPager.setPadding(paddingInPx, 0, paddingInPx, 0);
-        int marginInPx = getPxFromDp(5);
-        vrPhotosViewPager.setPageMargin(marginInPx);
-    }
-
-    private int getPxFromDp(int dps) {
-        return (int) (TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dps, getResources().getDisplayMetrics()));
-    }
-
-    private void generateDummyVRPhotos() {
-        photos = new ArrayList<>();
-
-        String[] paths = new String[]{
-                "file:///android_asset/andes.jpg",
-                "file:///android_asset/vrview-mono-stereo.jpg"
-        };
-
-        for (int i = 0; i < paths.length; i++) {
-            VRPhoto photo = new VRPhoto();
-            photo.setFullImageUrl(paths[i]);
-            photos.add(photo);
+        final DiscoverItem discoverItem = getIntent().getExtras().getParcelable(Constants.DISCOVER_ITEM);
+        if (discoverItem != null) {
+            title.setText(discoverItem.getName());
+            ratingBar.setRating(Float.valueOf(discoverItem.getRating()));
+            roomPrice.setText(String.format("Price: %s", discoverItem.getPrice()));
+            Glide.with(this).load(discoverItem.getUrl()).into(previewImage);
+            String[] features = discoverItem.getDetails().split("\\|");
+            RoomFeaturesRecyclerAdapter adapter = new RoomFeaturesRecyclerAdapter(features);
+            LinearLayoutManager llm = new LinearLayoutManager(this);
+            llm.setOrientation(LinearLayoutManager.VERTICAL);
+            roomFeaturesRecycler.setLayoutManager(llm);
+            roomFeaturesRecycler.setAdapter(adapter);
+            cardViewIcon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri uri = Uri.parse(discoverItem.getVrViewURL());
+                    CustomTabsIntent.Builder intentBuilder = new CustomTabsIntent.Builder();
+                    intentBuilder.enableUrlBarHiding();
+                    CustomTabsIntent customTabsIntent = intentBuilder.build();
+                    customTabsIntent.launchUrl(DiscoverDetailActivity.this, uri);
+                }
+            });
         }
     }
 

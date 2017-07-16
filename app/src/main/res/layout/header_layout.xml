@@ -17,6 +17,7 @@
         android:id="@+id/title"
         style="@style/ContentText"
         android:text="@string/title"
+        android:textColor="@color/black"
         android:textSize="@dimen/title_text_size"
         android:textStyle="bold" />
 

@@ -1,25 +1,40 @@
 {
   "accommodations": [
     {
-      "name": "Alcatel Lucent",
-      "preview": "video",
-      "url": "https://www.youtube.com/watch?v=MdcrZFpNjTA",
-      "videoId": "MdcrZFpNjTA"
+      "name": "Family Room",
+      "preview": "image",
+      "url": "file:///android_asset/accommodations/family_room.jpg",
+      "details": "86 square metres|1 King + 2 Single beds all in one large space|Spacious bathroom with glass-enclosed shower and deep-soaking bathtub|Luxury bathroom amenities|Microfibre and terry bathrobes|Additional toilet|Nespresso machine and gourmet tea selections|Fully stocked minibar|42\" interactive flatscreen TV|Cable channels (free) and movies on demand (charges apply)|In-room safe|Iron and ironing board|Shoe brush and shoe horn|Non-smoking",
+      "rating": "4.60",
+      "price": "3,000 per night",
+      "vrViewURL": "https://evrviewer.firebaseapp.com?room=1"
     },
     {
-      "name": "Le Royal Park",
+      "name": "Deluxe Room",
       "preview": "image",
-      "url": "file:///android_asset/stubimages/le_royal_park_offer.jpg"
+      "url": "file:///android_asset/accommodations/deluxe_room.jpg",
+      "details": "39 square metres|Spacious bathroom with glass-enclosed shower|42\" interactive flatscreen TV|Cable channels (free) and movies on demand (charges apply)|Free Wi-Fi",
+      "rating": "4.50",
+      "price": "2,000 per night",
+      "vrViewURL": "https://evrviewer.firebaseapp.com?room=2"
     },
     {
-      "name": "Microtel",
+      "name": "Room 6",
       "preview": "image",
-      "url": "file:///android_asset/stubimages/microtel_offer.jpg"
+      "url": "file:///android_asset/accommodations/Room6.jpg",
+      "details": "39 square metres|Spacious bathroom with glass-enclosed shower|42\" interactive flatscreen TV|Cable channels (free) and movies on demand (charges apply)|Free Wi-Fi",
+      "rating": "4.50",
+      "price": "2,000 per night",
+      "vrViewURL": "https://evrviewer.firebaseapp.com?room=3"
     },
     {
-      "name": "Nature Place",
+      "name": "Room",
       "preview": "image",
-      "url": "file:///android_asset/stubimages/nature_place_offer.jpg"
+      "url": "file:///android_asset/accommodations/Room.jpg",
+      "details": "39 square metres|Spacious bathroom with glass-enclosed shower|42\" interactive flatscreen TV|Cable channels (free) and movies on demand (charges apply)|Free Wi-Fi",
+      "rating": "4.50",
+      "price": "2,000 per night",
+      "vrViewURL": "https://evrviewer.firebaseapp.com?room=4"
     }
   ]
 }

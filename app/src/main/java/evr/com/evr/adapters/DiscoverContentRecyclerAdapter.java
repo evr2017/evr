@@ -17,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import evr.com.evr.R;
 import evr.com.evr.enums.DiscoverItemPreview;
+import evr.com.evr.interfaces.DiscoverClickListener;
 import evr.com.evr.models.DiscoverItem;
 import evr.com.evr.models.DiscoverVideo;
 
@@ -28,8 +29,11 @@ public class DiscoverContentRecyclerAdapter extends RecyclerView.Adapter<Discove
 
     private List<DiscoverItem> accomodations;
 
-    public DiscoverContentRecyclerAdapter(List<DiscoverItem> discoverItems) {
+    private DiscoverClickListener discoverClickListener;
+
+    public DiscoverContentRecyclerAdapter(List<DiscoverItem> discoverItems, DiscoverClickListener discoverClickListener) {
         this.accomodations = discoverItems;
+        this.discoverClickListener = discoverClickListener;
     }
 
     @Override
@@ -46,7 +50,7 @@ public class DiscoverContentRecyclerAdapter extends RecyclerView.Adapter<Discove
         holder.headerRowLabel.setText(discoverItem.getName());
         if (accomodations.get(position).getPreview() == DiscoverItemPreview.VIDEO) {
 
-            String previewUrl = "http://img.youtube.com/vi/"+ ((DiscoverVideo) discoverItem).getVideoId()+"/0.jpg";
+            String previewUrl = "http://img.youtube.com/vi/" + ((DiscoverVideo) discoverItem).getVideoId() + "/0.jpg";
             Glide.with(holder.itemView.getContext())
                     .load(previewUrl)
                     .centerCrop()
@@ -56,8 +60,8 @@ public class DiscoverContentRecyclerAdapter extends RecyclerView.Adapter<Discove
             holder.video_play_icon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse( discoverItem.getUrl()));
-                    intent.putExtra("force_fullscreen",true);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(discoverItem.getUrl()));
+                    intent.putExtra("force_fullscreen", true);
                     holder.itemView.getContext().startActivity(intent);
                 }
             });
@@ -67,6 +71,16 @@ public class DiscoverContentRecyclerAdapter extends RecyclerView.Adapter<Discove
                     .into(holder.previewImage);
             holder.video_play_icon.setVisibility(View.INVISIBLE);
         }
+
+
+        holder.goIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (discoverClickListener != null) {
+                    discoverClickListener.onDiscoverItemClicked(discoverItem);
+                }
+            }
+        });
     }
 
     @Override

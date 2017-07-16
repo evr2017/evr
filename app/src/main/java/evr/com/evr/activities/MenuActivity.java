@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import evr.com.evr.R;
 import evr.com.evr.fragments.AboutUsFragment;
+import evr.com.evr.fragments.DiscoverContentFragment;
 import evr.com.evr.fragments.DiscoverFragment;
 import evr.com.evr.fragments.HomeFragment;
 import evr.com.evr.fragments.LocationFragment;
@@ -59,7 +60,8 @@ public class MenuActivity extends BaseActivity {
                                 break;
                             case R.id.action_item4:
                                 if (!(currentFragment instanceof DiscoverFragment)) {
-                                    selectedFragment = DiscoverFragment.newInstance();
+                                    //selectedFragment = DiscoverFragment.newInstance();
+                                    selectedFragment = DiscoverContentFragment.newInstance("Accommodation");
                                 }
                                 break;
                         }

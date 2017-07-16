@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.GridView;
 
 import evr.com.evr.R;
-import evr.com.evr.activities.DiscoverDetailActivity;
 import evr.com.evr.activities.DiscoverContentActivity;
 import evr.com.evr.adapters.DiscoverGridViewAdapter;
 import evr.com.evr.models.DiscoverSection;
@@ -59,18 +58,18 @@ public class DiscoverFragment extends Fragment {
                 DiscoverSection section = (DiscoverSection) parent.getAdapter().getItem(position);
                 Intent intent = new Intent();
                 //switch (position) {
-                    //case 0:
-                    //case 1:
-                    //case 2:
-                    //case 3:
-                    //case 4:
-                    //case 5:
-                        intent.setClass(getActivity(), DiscoverContentActivity.class);
-                        intent.putExtra(Constants.EXTRA_SECTION_NAME, section.getTitle());
-                        //break;
-                    //default:
-                        //intent.setClass(getActivity(), DiscoverDetailActivity.class);
-                        //intent.putExtra(Constants.EXTRA_SECTION_NAME, section.getTitle());
+                //case 0:
+                //case 1:
+                //case 2:
+                //case 3:
+                //case 4:
+                //case 5:
+                intent.setClass(getActivity(), DiscoverContentActivity.class);
+                intent.putExtra(Constants.EXTRA_SECTION_NAME, section.getTitle());
+                //break;
+                //default:
+                //intent.setClass(getActivity(), DiscoverDetailActivity.class);
+                //intent.putExtra(Constants.EXTRA_SECTION_NAME, section.getTitle());
                 //}
                 startActivity(intent);
             }
@@ -87,7 +86,7 @@ public class DiscoverFragment extends Fragment {
                 //Intent vrModeIntent = new Intent(getActivity(), WebViewVRModeActivity.class);
                 //startActivity(vrModeIntent);
 
-                Uri uri = Uri.parse("http://localhost:8080/Reticulum-master1/examples/basic.html");
+                Uri uri = Uri.parse("https://evrviewer.firebaseapp.com");
                 // create an intent builder
                 CustomTabsIntent.Builder intentBuilder = new CustomTabsIntent.Builder();
                 intentBuilder.enableUrlBarHiding();
