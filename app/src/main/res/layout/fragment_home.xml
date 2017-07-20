@@ -1,42 +1,40 @@
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
+    android:layout_height="wrap_content">
 
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:srcCompat="@drawable/flashscreen">
-
-    <com.daimajia.slider.library.SliderLayout
-        android:id="@+id/slider"
-        android:layout_width="match_parent"
-        android:layout_height="200dp" />
-
-    <com.daimajia.slider.library.Indicators.PagerIndicator
-        android:id="@+id/custom_indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        />
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/sky"
-        android:textColor="@color/white"
-        android:text="@string/limited"
-        android:padding="@dimen/margin_5"/>
+        android:orientation="vertical"
+        app:srcCompat="@drawable/flashscreen">
 
-    <android.support.v17.leanback.widget.HorizontalGridView
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:id="@+id/gridView_offers"
-        />
+        <com.daimajia.slider.library.SliderLayout
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.daimajia.slider.library.Indicators.PagerIndicator
+            android:id="@+id/custom_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sky"
+            android:padding="@dimen/margin_5"
+            android:text="@string/limited"
+            android:textColor="@color/white" />
+
+        <android.support.v17.leanback.widget.HorizontalGridView
+            android:id="@+id/gridView_offers"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp" />
 
 
-    <!--<GridView-->
+        <!--<GridView-->
         <!--android:id="@+id/gridViewHome"-->
         <!--android:numColumns="2"-->
         <!--android:gravity="center"-->
@@ -46,22 +44,21 @@
         <!--android:layout_height="150dp"-->
         <!--/>-->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:background="@color/sky"
-        android:text="@string/featured"
-        android:padding="@dimen/margin_5"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sky"
+            android:padding="@dimen/margin_5"
+            android:text="@string/featured"
+            android:textColor="@color/white" />
 
-    <android.support.v17.leanback.widget.HorizontalGridView
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:id="@+id/gridView_videos"
-        />
+        <android.support.v17.leanback.widget.HorizontalGridView
+            android:id="@+id/gridView_videos"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp" />
 
 
-    <!--<ImageView-->
+        <!--<ImageView-->
         <!--android:id="@+id/imageView"-->
         <!--android:paddingTop="10px"-->
         <!--android:layout_gravity="center"-->
@@ -69,5 +66,5 @@
         <!--android:layout_height="150dp"-->
         <!--app:srcCompat="@drawable/rollervid"-->
         <!--/>-->
-</LinearLayout>
+    </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
